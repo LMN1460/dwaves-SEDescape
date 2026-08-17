@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html><head>
+		<title>Linux Bash-&gt;SED compatible online escape character tool</title>
+		<!-- meta -->
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="keywords" lang="de" content="sed,escape,special,chars">
+		<meta name="keywords" lang="en-us" content="sed,escape,special,chars">
+		<meta name="description" lang="de" content="explanation: Sometimes it's really tricky and ugly (the output) to manually escape a character sequences (e.g. in allready escaped stuff) user can use the escaped strings in sed
+		this tool tries it's (JavaScript, yes its dangerous and ugly but well X-D) best to escape one's character sequence so it can be used in sed and user can escape the madness">
+		<meta name="description" lang="en-us" content="explanation: Sometimes it's really tricky and ugly (the output) to manually escape a character sequences (e.g. in allready escaped stuff) user can use the escaped strings in sed, this tool tries it's (JavaScript, yes its dangerous and ugly but well X-D) best to escape one's character sequence so it can be used in sed and user can escape the madness">
+		<meta name="description" lang="en" content="explanation: Sometimes it's really tricky and ugly (the output) to manually escape a character sequences (e.g. in allready escaped stuff) user can use the escaped strings in sed, this tool tries it's (JavaScript, yes its dangerous and ugly but well X-D) best to escape one's character sequence so it can be used in sed and user can escape the madness">
+		
+		<!-- styles external global -->
+
+		<!-- styles page specific -->
+		<style type="text/css"></style>
+		
+		<!-- scripts -->
+		<!-- last jquery version that supports ie8/9 -->
+		<script type="text/javascript" src="SED_formatter_escape_tool_files/jquery-1.11.1.min_-9TM.js"></script>
+		<script type="text/javascript">
+			// define one's functions outside of the ready function
+			function customFunction() {
+
+			}
+
+$(document).ready(function() {
+	$("#button").click(
+	function()
+	{
+	var input = $("#input_textarea").val();
+	
+	/*
+	SED ESCAPE:
+	\ -> \\
+	/ -> \/
+	
+	*/
+	
+	var output1 = input.replace(/\\/g,"\\\\")
+
+	var output2 = output1.replace(/\//g,"\\\/")
+
+	var output3 = output2.replace(/'/g,"\\x27")
+
+	var output4 = output3.replace(/\[/g,"\\[")
+
+	var output5 = output4.replace(/\]/g,"\\]")
+
+	var output6 = output5.replace(/\$/g,"\\$")
+
+	var output7 = output6.replace(/\*/g,"\\*")
+
+	var output8 = output7.replace(/\./g,"\\.")
+
+	var output9 = output8.replace(/\^/g,"\\^")
+
+	var output10 = output9.replace(/\&/g,"\\&")
+	
+	var output11 = output10.replace(/"/g, '\\"')
+
+	$("#output_textarea").val(output11);
+	}
+	);
+	
+});
+
+		</script>
+	</head>
+	<body cz-shortcut-listen="true">
+		<style>
+		textarea {
+			width: 80%;
+			min-height: 200px;
+		}
+		</style>
+		<h3>GNU Linux Bash-&gt;SED compatible online escape character tool v1_4</h3>
+		<p>copy into input box the character sequence user wants to escape, then hit escape button:</p>
+		<p>
+		explain: sometimes it's really ugly (and tricky) manually escape 
+character sequences in allready escaped sequence (for example in a 
+database)
+		user can use the escaped string in sed for search replace:
+		</p><pre>sed 's/replace-this-escaped-stuff/with-that-escaped-stuff/g' input.txt &gt; output.txt;</pre>
+<div id="input">
+<h3>input:</h3>
+<textarea id="input_textarea"># use cases: what will be escaped? (hit the escape button to test)
+1) forward slash /
+2) backward slash \
+3) single quotation mark '
+4) opening brackets [
+5) closing brackets ]
+6) dollar $
+7) star *
+8) dot .
+9) circumflex ^
+10) ampersand &amp;
+11) double quotation mark " does not have to be used if the 'pattern' is enclosed single quotation marks ' (like above)
+... anything missing? please report
+</textarea>
+		</div>
+		<div id="sed-compatible-escaped" tooltip="hopefully">
+			<h3>output:</h3>
+			<textarea id="output_textarea"></textarea>
+		</div>
+		<button id="button" style="display:block; width:100%;  padding:1rem 0;  font-size:1.2rem;  color:#fff;  background:#ff6600;  border:none;  border-radius:0.5rem;  cursor:pointer;  box-sizing:border-box;  text-align:center;  line-height:1;">ESCAPE THE MATRIX</button>
+		
+		this tool tries it's (JavaScript, yes its dangerous and ugly but well 
+X-D) best so the user can escape the madness, please report errors to <a href="https://dwaves.org/contact/">https://dwaves.org/contact/</a><br>thanks! :)<br>
+		        <p>published under <a href="https://github.com/torvalds/linux/blob/master/LICENSES/preferred/GPL-2.0"> GPL 2.0 licence (</a><a href="https://dwaves.org/licences/GPL-2.0.txt">backup copy here)</a>, this <a href="https://choosealicense.com/licenses/gpl-2.0/">site displays nicely what is allowed and what not</a></p>
+
+	
+
+</body></html>
