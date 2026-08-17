@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html><head>
-		<title>Linux Bash-&gt;SED compatible online escape character tool</title>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Linux Bash->SED compatible online escape character tool</title>
 		<!-- meta -->
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta name="keywords" lang="de" content="sed,escape,special,chars">
@@ -67,24 +68,23 @@ $(document).ready(function() {
 
 		</script>
 	</head>
-	<body cz-shortcut-listen="true">
+	<body>
 		<style>
 		textarea {
 			width: 80%;
 			min-height: 200px;
 		}
 		</style>
-		<h3>GNU Linux Bash-&gt;SED compatible online escape character tool v1_4</h3>
+		<h3>GNU Linux Bash->SED compatible online escape character tool v1_4</h3>
 		<p>copy into input box the character sequence user wants to escape, then hit escape button:</p>
 		<p>
-		explain: sometimes it's really ugly (and tricky) manually escape 
-character sequences in allready escaped sequence (for example in a 
-database)
+		explain: sometimes it's really ugly (and tricky) manually escape character sequences in allready escaped sequence (for example in a database)
 		user can use the escaped string in sed for search replace:
-		</p><pre>sed 's/replace-this-escaped-stuff/with-that-escaped-stuff/g' input.txt &gt; output.txt;</pre>
+		<pre>sed 's/replace-this-escaped-stuff/with-that-escaped-stuff/g' input.txt > output.txt;</pre>
 <div id="input">
 <h3>input:</h3>
-<textarea id="input_textarea"># use cases: what will be escaped? (hit the escape button to test)
+<textarea id="input_textarea">
+# use cases: what will be escaped? (hit the escape button to test)
 1) forward slash /
 2) backward slash \
 3) single quotation mark '
@@ -94,36 +94,19 @@ database)
 7) star *
 8) dot .
 9) circumflex ^
-10) ampersand &amp;
+10) ampersand &
 11) double quotation mark " does not have to be used if the 'pattern' is enclosed single quotation marks ' (like above)
 ... anything missing? please report
 </textarea>
 		</div>
 		<div id="sed-compatible-escaped" tooltip="hopefully">
 			<h3>output:</h3>
-			<textarea id="output_textarea"># use cases: what will be escaped? 
-(hit the escape button to test)
-1) forward slash \/
-2) backward slash \\
-3) single quotation mark \x27
-4) opening brackets \[
-5) closing brackets \]
-6) dollar \$
-7) star \*
-8) dot \.
-9) circumflex \^
-10) ampersand \&amp;
-11) double quotation mark \" does not have to be used if the 
-\x27pattern\x27 is enclosed single quotation marks \x27 (like above)
-\.\.\. anything missing? please report
-</textarea>
+			<textarea id="output_textarea"></textarea>
 		</div>
 		<button id="button" style="display:block; width:100%;  padding:1rem 0;  font-size:1.2rem;  color:#fff;  background:#ff6600;  border:none;  border-radius:0.5rem;  cursor:pointer;  box-sizing:border-box;  text-align:center;  line-height:1;">ESCAPE THE MATRIX</button>
 		
-		this tool tries it's (JavaScript, yes its dangerous and ugly but well 
-X-D) best so the user can escape the madness, please report errors to <a href="https://dwaves.org/contact/">https://dwaves.org/contact/</a><br>thanks! :)<br>
-		        <p>published under <a href="https://github.com/torvalds/linux/blob/master/LICENSES/preferred/GPL-2.0"> GPL 2.0 licence (</a><a href="https://dwaves.org/licences/GPL-2.0.txt">backup copy here)</a>, this <a href="https://choosealicense.com/licenses/gpl-2.0/">site displays nicely what is allowed and what not</a></p>
+		this tool tries it's (JavaScript, yes its dangerous and ugly but well X-D) best so the user can escape the madness, please report errors to <a href="https://dwaves.org/contact/">https://dwaves.org/contact/</a><br>thanks! :)<br>
+		        <p>published under <a href="https://github.com/torvalds/linux/blob/master/LICENSES/preferred/GPL-2.0"> GPL 2.0 licence (<a href="https://dwaves.org/licences/GPL-2.0.txt">backup copy here)</a>, this <a href="https://choosealicense.com/licenses/gpl-2.0/">site displays nicely what is allowed and what not</a></p>
 
-	
-
-<div id="1p-menu-live-region" role="status" aria-live="polite" aria-atomic="true" aria-relevant="all" style="clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; overflow: hidden; position: fixed; top: 0px; left: 0px; white-space: nowrap; width: 1px; overflow-wrap: normal;">1Password menu is available. Press down arrow to select.</div></body></html>
+	</body>
+</html>
